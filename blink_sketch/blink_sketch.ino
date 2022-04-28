@@ -9,14 +9,13 @@
 */
 
 // LED on GPIO2
-int ledPin = 1, lednum = 36;
+int lednum = 36;
 
 void setup()
 {
-    for(int i = 1; i < lednum; i++){
       // Set LED as output
-      pinMode(ledPin, OUTPUT);
-    }
+      pinMode(23, OUTPUT);
+    
    
     
     // Serial monitor setup
@@ -25,15 +24,15 @@ void setup()
 
 void loop()
 {
-    for(int j = 1; j < lednum; j++){
-       Serial.print(j);
+    //for(int j = 1; j < lednum; j++){
+       Serial.print("hello");
        Serial.print("\n");
-       digitalWrite(j, HIGH);
+       digitalWrite(23, HIGH);
        delay(1000);
     
-       digitalWrite(j, LOW);
+       digitalWrite(23, LOW);
     
        delay(1000);
-    }
+    //}
     
 }
