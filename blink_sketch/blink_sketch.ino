@@ -14,7 +14,7 @@ int lednum = 36;
 void setup()
 {
       // Set LED as output
-      pinMode(23, OUTPUT);
+      pinMode(12, OUTPUT);
     
    
     
@@ -27,10 +27,10 @@ void loop()
     //for(int j = 1; j < lednum; j++){
        Serial.print("hello");
        Serial.print("\n");
-       digitalWrite(23, HIGH);
+       digitalWrite(12, HIGH);
        delay(1000);
     
-       digitalWrite(23, LOW);
+       digitalWrite(12, LOW);
     
        delay(1000);
     //}
