@@ -23,11 +23,13 @@ void printLocalTime()
     return;
   }
   // Print time on serial monitor
-  Serial.println(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+  Serial.println(&timeinfo, "%B %d %Y %H:%M:%S");
 
   // Print time in LCD
   lcd.setCursor(0, 0);
-  lcd.print(&timeinfo, "%A, %B %d %Y %H:%M:%S");
+  lcd.print(&timeinfo, "%d %Y %H:%M:%S");
+  lcd.setCursor(0, 1);
+  lcd.print(&timeinfo, "%B");
 }
 
 
@@ -47,6 +49,10 @@ void setup()
   //init and get the time
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
   printLocalTime();
+
+  //disconnect WiFi as it's no longer needed
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_OFF);
 
   // Initialize I2C LCD module (SDA = GPIO21, SCL = GPIO22)
   lcd.begin(21, 22);
