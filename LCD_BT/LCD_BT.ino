@@ -16,9 +16,9 @@ const char* ntpServer = "pool.ntp.org";
 //  BT declarations
 int zone = 0;
 int const offset_arr[]={7200, 3600, 7200, 10800, 36000, 28800, 32400, -14400};
-char const *zones_arr[] = {"Cairo", "London", "Paris", "Moscow", "Sydney", "Beijing", "Tokyo", "Toronto"};
+char const *zones_arr[] = {"Cairo  ", "London ", "Paris  ", "Moscow ", "Sydney ", "Beijing", "Tokyo  ", "Toronto"};
 
-// Print the time on the serial monitor
+// Print the time on the LCD
 void ya3amoElsa3aKam()
 {
   //  Get out of function if no time available
@@ -57,8 +57,9 @@ void loop()
   
   delay(500);
   
-  lcd.setCursor(15, 0);
-  lcd.print(zone);
+  lcd.setCursor(9, 0);
+  lcd.print(zones_arr[zone]);
+  // Print time on LCD
   ya3amoElsa3aKam();
 
   // -------------------- Receive Bluetooth signal ----------------------
