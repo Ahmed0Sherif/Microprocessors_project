@@ -19,7 +19,7 @@ int const offset_arr[]={7200, 3600, 7200, 10800, 36000, 28800, 32400, -14400};
 char const *zones_arr[] = {"Cairo", "London", "Paris", "Moscow", "Sydney", "Beijing", "Tokyo", "Toronto"};
 
 // Print the time on the serial monitor
-void printLocalTime()
+void ya3amoElsa3aKam()
 {
   //  Get out of function if no time available
   struct tm timeinfo;
@@ -38,7 +38,7 @@ void printLocalTime()
 void setup()
 {  
   //connect to WiFi
-  WiFi.begin("Yahia Walid", "yinhunfuf");
+  WiFi.begin("YOUR_SSID", "YOUR_PASSWORD");
 
   // Initialize I2C LCD module (SDA = GPIO21, SCL = GPIO22)
   lcd.begin(21, 22);
@@ -59,7 +59,7 @@ void loop()
   
   lcd.setCursor(15, 0);
   lcd.print(zone);
-  printLocalTime();
+  ya3amoElsa3aKam();
 
   // -------------------- Receive Bluetooth signal ----------------------
   if (ESP_BT.available()) 
